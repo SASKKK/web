@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Highcharts Example</title>
+    <!-- 引入 Highcharts 库 -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+<!-- 创建一个容器来放置图表 -->
+<div id="chart-container" style="width: 600px; height: 400px;"></div>
+
+<script>
+    // 在页面加载完成后创建图表
+    document.addEventListener('DOMContentLoaded', function () {
+        // 定义图表配置选项
+        var options = {
+            chart: {
+                type: 'line' // 指定图表类型为折线图
+            },
+            title: {
+                text: 'Monthly Average Temperature' // 图表标题
+            },
+            xAxis: {
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] // X 轴标签
+            },
+            yAxis: {
+                title: {
+                    text: 'Temperature (°C)' // Y 轴标题
+                }
+            },
+            series: [{
+                name: 'Tokyo',
+                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6] // 数据
+            }]
+        };
+
+        // 在指定容器中创建图表
+        Highcharts.chart('chart-container', options);
+    });
+</script>
+</body>
+</html>
